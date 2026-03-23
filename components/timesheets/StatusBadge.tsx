@@ -1,0 +1,14 @@
+const statusStyles: Record<string, string> = {
+  Completed: "bg-[#DEF7EC] text-[#03543F]",
+  Incomplete: "bg-[#FDF6B2] text-[#723B13]",
+  Missing: "bg-[#FCE8F3] text-[#99154B]",
+}
+
+export default function StatusBadge({ status }: { status: string }) {
+  const style = statusStyles[status] ?? "bg-gray-100 text-gray-600"
+  return (
+    <span className={`inline-block rounded px-2.5 py-1 text-xs font-medium uppercase tracking-wide ${style}`}>
+      {status}
+    </span>
+  )
+}
